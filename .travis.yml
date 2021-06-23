@@ -1,0 +1,8 @@
+arch:
+  - arm64
+env:
+  - IMGNAME=minalmahor/pythondockerimage
+services:
+  - docker
+script:
+  - dig +short 

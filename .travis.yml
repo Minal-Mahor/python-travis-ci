@@ -1,8 +1,3 @@
-arch:
-  - arm64
-env:
-  - IMGNAME=minalmahor/pythondockerimage
-services:
-  - docker
+language: python
 script:
-  - dig +short 
+  - python main.py

@@ -1,9 +1,13 @@
-os:
-  - linux
-
-dist: xenial
-
 language: python
 
+services:
+  - docker
+
+before_install:
+  - docker build -t minalmahor/flaskimage .
+  - docker run -d -p 8080:5001 minalmahor/flaskimage
+  - docker ps -a
+  
 script:
-  - python sample.py
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push minalmahor/flaskimage

@@ -11,4 +11,4 @@ before_install:
 script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push minalmahor/flaskimage
-  - docker run -p 8000:5001 minalmahor/flaskimage
+  
